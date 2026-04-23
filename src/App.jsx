@@ -8,11 +8,18 @@ function App() {
   return (
     <>
       <Header />
-      <ProductCard product={products[0]}/>
       <Hero />
+
+      <button onClick={() => setShowSpecial(!showSpecial)}>
+        Show Today's Special
+      </button>
+
+      {showSpecial && <ProductCard product={products[0]} />}
+
       <Footer />
     </>
   );
 }
 
+export default App;
 export default App;
