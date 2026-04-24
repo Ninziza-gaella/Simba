@@ -7,3 +7,4 @@ export const PRODUCTS = [
   { id: 5, name: "Dembe Maize Flour 5kg", priceRwf: 4500, image: "/img/flour.jpg",     inStock: true  },
   { id: 6, name: "Tropical Pineapple",    priceRwf:  800, image: "/img/pineapple.jpg", inStock: true  },
 ];
+export default products;

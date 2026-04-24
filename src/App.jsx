@@ -7,7 +7,7 @@ import products from "./data/products";
 function App() {
   return (
     <>
-      <Header />
+      <Header name={"Simba"} />
       <Hero />
 
       <button onClick={() => setShowSpecial(!showSpecial)}>
@@ -21,5 +21,5 @@ function App() {
   );
 }
 
-export default App;
+
 export default App;
