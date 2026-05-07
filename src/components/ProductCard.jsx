@@ -11,6 +11,7 @@ function ProductCard({ product }) {
       <img src={image} alt={name} />
       <h3>{name}</h3>
       <p>{formattedPrice}</p>
+      <button onClick={()=> onAddToCart(product)}>Add to cart</button>
     </div>
   );
 }
