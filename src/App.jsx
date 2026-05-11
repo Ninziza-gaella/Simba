@@ -10,10 +10,12 @@ function App() {
   const [showSpecial, setShowSpecial] = useState(false);
   const [query, setQuery] = useState("");
 
-  // Filter products by name (case-insensitive)
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(query.toLowerCase())
   );
+  function handleAddToCart(product){
+    console.log("Added: ",product.name);
+  }
 
   return (
     <>
@@ -28,11 +30,18 @@ function App() {
       <button onClick={() => setShowSpecial(!showSpecial)}>
         {showSpecial ? "Hide Special" : "Show Today's Special"}
       </button>
-
-      {showSpecial && filteredProducts.length > 0 && (
-          <ProductCard product={filteredProducts[0]} />
-        )}
-
+      {filteredProducts.length === 0 ?(
+<>
+<p>No products match your search.</p>
+<button onClick={()=>setQuery("")}>Clear Search</button>
+</>
+      ):(
+        showSpecial && (
+          <ProductCard
+          product={filteredProducts[0]}
+          onAddToCart={handleAddToCart}
+/>        )
+      )}
       <Footer />
     </>
   );

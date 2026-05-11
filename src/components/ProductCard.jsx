@@ -11,7 +11,12 @@ function ProductCard({ product }) {
       <img src={image} alt={name} />
       <h3>{name}</h3>
       <p>{formattedPrice}</p>
-      <button onClick={()=> onAddToCart(product)}>Add to cart</button>
+      {!inStock &&(
+        <p style={{color:"red",fontWeight:"bold"}}>
+          Out of stock
+        </p>
+      )}
+      <button onClick={()=> onAddToCart(product)}disabled={!inStock}>Add to cart</button>
     </div>
   );
 }
