@@ -1,8 +1,8 @@
-const Header=({name})=> {
+function Header(){
   return (
-    <div>
-      <h1 className="hero">Karibu {name} Supermarket!</h1>
-    </div>
+    <header className="header">
+      <h1 >Karibu Simba Supermarket!</h1>
+    </header>
   );
 }
 

@@ -1,5 +1,5 @@
-function ProductCard({ product }) {
-  const { name, price, image } = product;
+function ProductCard({ product ,onAddToCart}) {
+  const { name, price, image , inStock} = product;
 
   const formattedPrice = new Intl.NumberFormat("en-RW", {
     style: "currency",
@@ -16,7 +16,7 @@ function ProductCard({ product }) {
           Out of stock
         </p>
       )}
-      <button onClick={()=> onAddToCart(product)}disabled={!inStock}>Add to cart</button>
+      <button onClick={()=> onAddToCart(product)} disabled={!inStock}>Add to cart</button>
     </div>
   );
 }

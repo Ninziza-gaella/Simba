@@ -36,11 +36,15 @@ function App() {
 <button onClick={()=>setQuery("")}>Clear Search</button>
 </>
       ):(
-        showSpecial && (
-          <ProductCard
-          product={filteredProducts[0]}
-          onAddToCart={handleAddToCart}
-/>        )
+       <div className="product-grid">
+  {showSpecial &&
+    filteredProducts.length > 0 && (
+      <ProductCard
+        product={filteredProducts[0]}
+        onAddToCart={handleAddToCart}
+      />
+    )}
+</div>
       )}
       <Footer />
     </>
